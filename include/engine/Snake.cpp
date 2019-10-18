@@ -1,6 +1,11 @@
 #include "Snake.hpp"
 
-Snake::Snake(float x, float y, float width, float height, GLuint& texture, Direction_t direction)
+Snake::Snake()
+{
+
+}
+
+void Snake::Start(float x, float y, float width, float height, GLuint& texture, Direction_t direction)
 {
 	this->snakeWidth = width;
 	this->snakeHeight = height;
@@ -78,8 +83,6 @@ void Snake::ChangeDirection(Direction_t direction)
 	}
 	
 }
-
-
 
 void Snake::AddBodyPart()
 {

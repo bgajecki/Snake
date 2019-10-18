@@ -6,7 +6,8 @@
 class Snake : public Object
 {
 public:
-	Snake(float, float, float, float, GLuint&, Direction_t);
+	Snake();
+	void Start(float, float, float, float, GLuint&, Direction_t);
 	void Move();
 	void ChangeDirection(Direction_t);
 	void AddBodyPart();

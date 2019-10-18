@@ -2,12 +2,29 @@
 
 #include "Snake.hpp"
 #include "Point.hpp"
+#include "Constants.hpp"
 
-bool isCollision(Object_t& o1, Object_t& o2)
+class GameProcess
 {
-	if (o1.x < o2.x + o2.width && o1.x + o1.width > o2.x
-		&& o1.y < o2.y + o2.height && o1.y + o1.height > o2.y)
-		return true;
-	else
-		return false;
-}
+public:
+	GameProcess();
+
+	void Display();
+	void Special(int, int, int);
+	void Keyboard(unsigned char, int, int);
+	void Time(int);
+	void CreatePoint(int);
+
+private:
+	bool isCollision(Object_t&, Object_t&);
+	bool isCollision(Object&, Object&);
+	GLuint loadTexture(const char*);
+	float calibrateWidth(float);
+	float calibrateHeight(float);
+	float calibratePosX(float);
+	float calibratePosY(float);
+
+	Snake snake;
+	std::array<std::unique_ptr<Point>, CONSTANTS::MAX_POINTS_ON_MAP> points;
+	GLuint pointTexture;
+};

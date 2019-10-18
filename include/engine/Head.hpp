@@ -2,13 +2,10 @@
 
 #include <GL/glut.h>
 #include <Windows.h>
-#include <cstdio>
-#include <cstdlib>
 #include <ctime>
 #include <vector>
 #include <array>
 #include <memory>
-#include <string>
 
 enum Direction_t
 {
